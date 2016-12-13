@@ -1,7 +1,5 @@
 package no.tordbjorn;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,7 +16,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import no.tordbjorn.model.Customer;
 import no.tordbjorn.model.CustomerCategory;
 import no.tordbjorn.repository.CustomerCategoryRepository;
-import no.tordbjorn.repository.CustomerRepository;
 
 @SpringBootApplication(scanBasePackages="no.tordbjorn")
 public class CustomerBackendApplication implements CommandLineRunner {
