@@ -1,11 +1,11 @@
 package no.tordbjorn.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import no.tordbjorn.model.Customer;
 
-@Repository
+@RepositoryRestResource(path="customer")
 public interface CustomerRepository extends PagingAndSortingRepository<Customer, Long>{
 
 }
