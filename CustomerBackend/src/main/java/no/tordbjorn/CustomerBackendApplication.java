@@ -31,7 +31,7 @@ public class CustomerBackendApplication implements CommandLineRunner {
 	@Transactional
 	public void run(String... arguments) throws Exception {
 		
-		final CustomerCategory regularCategory = new CustomerCategory("Regular", false);
+		final CustomerCategory regularCategory = new CustomerCategory("Regular Customer", false);
 		
 		HashSet<Customer> regularCustomers = new HashSet<Customer>() {{
 			add(new Customer("Joe", "Regular", "joe@regular.com", LocalDate.of(1977, Month.FEBRUARY, 12)));
