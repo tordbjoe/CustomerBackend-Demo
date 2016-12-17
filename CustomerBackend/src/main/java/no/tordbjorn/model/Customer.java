@@ -1,6 +1,6 @@
 package no.tordbjorn.model;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +20,7 @@ public class Customer {
 
 	}
 
-	public Customer(String firstName, String lastName, String emailAdress, Date dateOfBirth) {
+	public Customer(String firstName, String lastName, String emailAdress, LocalDate dateOfBirth) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAdress = emailAdress;
@@ -42,7 +42,7 @@ public class Customer {
 	private String emailAdress;
 
 	@NotNull
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
 
 	@ManyToOne
 	@JoinColumn(name = "customer_category_id")
@@ -72,11 +72,11 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(LocalDate dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

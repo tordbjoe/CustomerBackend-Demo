@@ -1,6 +1,7 @@
 package no.tordbjorn;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.HashSet;
 
 import javax.transaction.Transactional;
@@ -31,18 +32,18 @@ public class CustomerBackendApplication implements CommandLineRunner {
 	public void run(String... arguments) throws Exception {
 		
 		final CustomerCategory regularCategory = new CustomerCategory("Regular", false);
-		@SuppressWarnings({ "serial", "deprecation" })
+		
 		HashSet<Customer> regularCustomers = new HashSet<Customer>() {{
-			add(new Customer("Joe", "Regular", "joe@regular.com", new Date(1980, 7, 5)));
-			add(new Customer("Jane", "Regular", "joe@regular.com", new Date(1982, 4, 12)));
+			add(new Customer("Joe", "Regular", "joe@regular.com", LocalDate.of(1977, Month.FEBRUARY, 12)));
+			add(new Customer("Jane", "Regular", "joe@regular.com", LocalDate.of(1980, Month.MARCH, 20)));
 		}};
 		regularCategory.setCustomers(regularCustomers);
 		
 		final CustomerCategory vipCategory = new CustomerCategory("Very Important Customer", true);
-		@SuppressWarnings({ "serial", "deprecation" })
+		
 		HashSet<Customer> vipCustomers = new HashSet<Customer>() {{
-			add(new Customer("Joe", "Rich", "joe@vip.com", new Date(1977, 2, 15)));
-			add(new Customer("Jane", "Rich", "joe@vip.com", new Date(1979, 1, 20)));
+			add(new Customer("Joe", "Rich", "joe@vip.com", LocalDate.of(1977, Month.FEBRUARY, 15)));
+			add(new Customer("Jane", "Rich", "joe@vip.com", LocalDate.of(1982, Month.JANUARY, 12)));
 		}};
 		vipCategory.setCustomers(vipCustomers);
 		
