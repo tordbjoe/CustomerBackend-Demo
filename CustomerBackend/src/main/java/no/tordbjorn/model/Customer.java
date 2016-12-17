@@ -1,6 +1,6 @@
 package no.tordbjorn.model;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +13,8 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Customer {
 
@@ -20,7 +22,7 @@ public class Customer {
 
 	}
 
-	public Customer(String firstName, String lastName, String emailAdress, LocalDate dateOfBirth) {
+	public Customer(String firstName, String lastName, String emailAdress, Date dateOfBirth) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailAdress = emailAdress;
@@ -42,7 +44,7 @@ public class Customer {
 	private String emailAdress;
 
 	@NotNull
-	private LocalDate dateOfBirth;
+	private Date dateOfBirth;
 
 	@ManyToOne
 	@JoinColumn(name = "customer_category_id")
@@ -72,11 +74,12 @@ public class Customer {
 		this.lastName = lastName;
 	}
 
-	public LocalDate getDateOfBirth() {
+	@JsonFormat(pattern="yyyy-MM-dd")
+	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(LocalDate dateOfBirth) {
+	public void setDateOfBirth(Date dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 

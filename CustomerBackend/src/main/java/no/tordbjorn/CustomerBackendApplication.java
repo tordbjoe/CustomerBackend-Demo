@@ -2,6 +2,8 @@ package no.tordbjorn;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 
 import javax.transaction.Transactional;
@@ -34,16 +36,16 @@ public class CustomerBackendApplication implements CommandLineRunner {
 		final CustomerCategory regularCategory = new CustomerCategory("Regular Customer", false);
 		
 		HashSet<Customer> regularCustomers = new HashSet<Customer>() {{
-			add(new Customer("Joe", "Regular", "joe@regular.com", LocalDate.of(1977, Month.FEBRUARY, 12)));
-			add(new Customer("Jane", "Regular", "joe@regular.com", LocalDate.of(1980, Month.MARCH, 20)));
+			add(new Customer("Joe", "Regular", "joe@regular.com", new GregorianCalendar(1982, 2, 12).getTime()));
+			add(new Customer("Jane", "Regular", "joe@regular.com", new GregorianCalendar(1973, 6, 23).getTime()));
 		}};
 		regularCategory.setCustomers(regularCustomers);
 		
 		final CustomerCategory vipCategory = new CustomerCategory("Very Important Customer", true);
 		
 		HashSet<Customer> vipCustomers = new HashSet<Customer>() {{
-			add(new Customer("Joe", "Rich", "joe@vip.com", LocalDate.of(1977, Month.FEBRUARY, 15)));
-			add(new Customer("Jane", "Rich", "joe@vip.com", LocalDate.of(1982, Month.JANUARY, 12)));
+			add(new Customer("Joe", "Rich", "joe@vip.com", new GregorianCalendar(1980, 2, 22).getTime()));
+			add(new Customer("Jane", "Rich", "joe@vip.com", new GregorianCalendar(1990, 5, 2).getTime()));
 		}};
 		vipCategory.setCustomers(vipCustomers);
 		
