@@ -1,8 +1,5 @@
 package no.tordbjorn;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 
@@ -27,7 +24,6 @@ public class CustomerBackendApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerBackendApplication.class, args);
 	}
-
 	
 	@Override
 	@Transactional
