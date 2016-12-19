@@ -16,4 +16,10 @@ This uses:
 
 Use the Spring Boot maven pluign : `mvn spring-boot:run`
 
+OR
 
+Use the accompanied Dockerfile:
+
+`docker build -f Dockerfile -t customerbackend .`
+
+`docker run -p 8080:8080 customerbackend`
